@@ -63,7 +63,7 @@ namespace YG
         private string photoSize;
         private LBPlayerDataYG[] players = new LBPlayerDataYG[0];
 
-        void Start()
+        void Awake()
         {
             if (playerPhoto == PlayerPhoto.NonePhoto)
                 photoSize = "nonePhoto";
@@ -119,7 +119,7 @@ namespace YG
                 }
                 else
                 {
-                    DestroyLBList();
+                    DestroyPurchasesList();
 
                     if (lb.entries == "no data")
                     {
@@ -145,7 +145,7 @@ namespace YG
             }
         }
 
-        private void DestroyLBList()
+        private void DestroyPurchasesList()
         {
             int childCount = rootSpawnPlayersData.childCount;
             for (int i = childCount - 1; i >= 0; i--)

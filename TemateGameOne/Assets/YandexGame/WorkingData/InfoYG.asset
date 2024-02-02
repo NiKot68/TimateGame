@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa747916aa66674d96ea40ca8a480b2, type: 3}
   m_Name: InfoYG
   m_EditorClassIdentifier: 
-  divAdaptiveBanners:
-    banners: []
-  yandexMusic:
-    nameBanner: 
-    copyLink: 
-  TVSettings:
-    TVTestInEditor: 0
   scopes: 1
   playerPhotoSize: 0
-  autoGameReadyAPI: 1
   playerInfoSimulation:
     authorized: 1
     isMobile: 0
@@ -31,22 +23,16 @@ MonoBehaviour:
     photo: https://justplaygames.ru/public/icon_player.png
   AdWhenLoadingScene: 1
   showFirstAd: 1
-  rewardedAfterClosing: 1
   adDisplayCalls: 0
   fullscreenAdInterval: 60
   durationOfAdSimulation: 0.5
-  loadAdWithDelaySimulation: 0
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
   flush: 0
   localSaveSync: 1
   saveCloudInterval: 5
   saveOnQuitGame: 0
-  quitGameParameters:
-    objectName: YandexGame
-    methodName: _SaveProgress
   leaderboardEnable: 1
-  saveScoreAnonymousPlayers: 1
   leaderboardSimulation:
   - technoName: advanced
     entries: 'Test LeaderBoard
@@ -251,6 +237,35 @@ MonoBehaviour:
     it: []
     de: []
     hi: []
+  fontsTMP:
+    defaultFont: []
+    ru: []
+    en: []
+    tr: []
+    az: []
+    be: []
+    he: []
+    hy: []
+    ka: []
+    et: []
+    fr: []
+    kk: []
+    ky: []
+    lt: []
+    lv: []
+    ro: []
+    tg: []
+    tk: []
+    uk: []
+    uz: []
+    es: []
+    pt: []
+    ar: []
+    id: []
+    ja: []
+    it: []
+    de: []
+    hi: []
   fontsSizeCorrect:
     ru: 
     en: 
@@ -306,5 +321,5 @@ MonoBehaviour:
   backgroundImageFormat: 3
   pixelRatioEnable: 0
   pixelRatioValue: 1
-  loadGameRun: 0
+  SDKStartDelay: 0
   staticRBTInGame: 0
