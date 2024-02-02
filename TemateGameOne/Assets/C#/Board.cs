@@ -8,11 +8,9 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = System.Random;
 
-/// <summary>
-/// coder by shlifedev(zero is black)
-/// </summary>
 public class Board : MonoBehaviour
 {
+    public WindowGame windowGame;
     public enum State
     {
         WAIT, PROCESSING, END
@@ -41,6 +39,7 @@ public class Board : MonoBehaviour
     public void OnGameOver()
     {
        Debug.Log("Game Over!!!!");
+        windowGame.GameOverActivePanel();
     }
     private void CreateBoard()
     {
@@ -390,10 +389,7 @@ public class Board : MonoBehaviour
         UpdateState();
         if (state == State.WAIT)
         {
-            if (Input.GetKeyUp(KeyCode.RightArrow)) MoveTo(Node.Direction.RIGHT);
-            if (Input.GetKeyUp(KeyCode.LeftArrow)) MoveTo(Node.Direction.LEFT);
-            if (Input.GetKeyUp(KeyCode.UpArrow)) MoveTo(Node.Direction.UP);
-            if (Input.GetKeyUp(KeyCode.DownArrow)) MoveTo(Node.Direction.DOWN);
+            MovePC();
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -402,6 +398,46 @@ public class Board : MonoBehaviour
         }
     }
 
+
+    public void MoveAndroid()
+    {
+       
+    }
+    public void MoveRight()
+    {
+        MoveTo(Node.Direction.RIGHT);
+    }
+    public void MoveLeft()
+    {
+        MoveTo(Node.Direction.LEFT);
+    }
+    public void MoveUp()
+    {
+        MoveTo(Node.Direction.UP);
+    }
+    public void MoveDown()
+    {
+        MoveTo(Node.Direction.DOWN);
+    }
+    public void MovePC()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            MoveUp();
+        }
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            MoveDown();
+        }
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            MoveLeft();
+        }
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            MoveRight();
+        }
+    }
     private void Start()
     {
         CreateRandom();
