@@ -1,4 +1,4 @@
-п»їusing System;
+using System;
 using UnityEngine;
 using UnityToolbag;
 using YG.Utils.Pay;
@@ -11,15 +11,15 @@ namespace YG
         [SerializeField]
         private bool spawnPurchases = true;
 
-        [SerializeField, ConditionallyVisible(nameof(spawnPurchases)), Tooltip("Р РѕРґРёС‚РµР»СЊСЃРєРёР№ РѕР±СЉРµРєС‚ РґР»СЏ СЃРїР°РІРЅР° РІ РЅС‘Рј РїРѕРєСѓРїРѕРє")]
+        [SerializeField, ConditionallyVisible(nameof(spawnPurchases)), Tooltip("Родительский объект для спавна в нём покупок")]
         private Transform rootSpawnPurchases;
-        [SerializeField, ConditionallyVisible(nameof(spawnPurchases)), Tooltip("РџСЂРµС„Р°Р± РїРѕРєСѓРїРєРё (РѕР±СЉРµРєС‚ СЃРѕ РєРѕРјРїРѕРЅРµРЅС‚РѕРј PurchaseYG)")]
+        [SerializeField, ConditionallyVisible(nameof(spawnPurchases)), Tooltip("Префаб покупки (объект со компонентом PurchaseYG)")]
         private GameObject purchasePrefab;
         public enum UpdateListMethod { OnEnable, Start, DoNotUpdate };
-        [Tooltip("РљРѕРіРґР° СЃР»РµРґСѓРµС‚ РѕР±РЅРѕРІР»СЏС‚СЊ СЃРїРёСЃРѕРє РїРѕРєСѓРїРѕРє?\nStart - РћР±РЅРѕРІР»СЏС‚СЊ РІ РјРµС‚РѕРґРµ Start.\nOnEnable - РћР±РЅРѕРІР»СЏС‚СЊ РїСЂРё РєР°Р¶РґРѕР№ Р°РєС‚РёРІР°С†РёРё РѕР±СЉРµРєС‚Р° (РІ РјРµС‚РѕРґРµ OnEnable)\nDoNotUpdate - РќРµ РѕР±РЅРѕРІР»СЏС‚СЊ.")]
+        [Tooltip("Когда следует обновлять список покупок?\nStart - Обновлять в методе Start.\nOnEnable - Обновлять при каждой активации объекта (в методе OnEnable)\nDoNotUpdate - Не обновлять.")]
         public UpdateListMethod updateListMethod;
 
-        [SerializeField, Tooltip("РЎРїРёСЃРѕРє РїРѕРєСѓРїРѕРє (PurchaseYG)")]
+        [SerializeField, Tooltip("Список покупок (PurchaseYG)")]
         public PurchaseYG[] purchases = new PurchaseYG[0];
 
         public Action onUpdatePurchasesList;
