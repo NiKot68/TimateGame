@@ -112,7 +112,8 @@ public class Board : MonoBehaviour
     public void Combine(Node from, Node to)
     {
      //   Debug.Log($"TRY COMBINE {from.point} , {to.point}");
-        to.value = to.value * 2;
+        to.value = to.value
+            * 2;
         from.value = null;
         if (from.realNodeObj != null)
         {
